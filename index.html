@@ -1,0 +1,438 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics Project: Your Project Title</title>
+    <style>
+        body{
+            margin: 0;
+            position: fixed;
+            background: radial-gradient(rgb(0, 12, 48),rgb(0, 5, 20));
+            width: 100vw;
+            height: 100vh;
+            
+        }
+        .bgeffects{
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            background: url("./Resources/31649-blue-nets-images.png");
+            opacity: 0.15;
+            filter: grayscale(100%);
+            background-size: cover;
+            background-repeat: no-repeat;
+            z-index: 0;
+        }
+        .TopBar{
+            width: 100%;
+            height: 30%;
+            background: linear-gradient(rgb(1, 42, 167), transparent);
+            display: flex;
+            z-index: 2;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+        .movingeffect{
+            width: 2vw;
+            height: 0.5vh;
+            border-radius: 100px;
+            background: rgb(0, 64, 255);
+            box-shadow: 0px 0px 6px 2px rgb(0, 64, 255);
+            position: absolute;
+            animation: movingeffectani 6s linear infinite;
+            opacity: 0.75;
+        }
+        @keyframes movingeffectani {
+            0%{}
+
+            15%{
+                width: 10vw;
+                
+            }
+            
+            24%{width: 2vw;
+            height: 0.5vh;
+            margin-left: 99.5vw;
+            margin-top: 0vh;}
+            
+            
+
+            25%{width: 0.5vh;
+            height: 2vw;
+            margin-left: 99.5vw;
+            margin-top: 0vh;}
+
+            
+            35%{
+                height: 15vh;
+
+            }
+
+
+            49%{width: 0.5vh;
+            height: 2vw;
+            margin-left: 99.5vw;
+            margin-top: 99vh;}
+
+            50%{width: 2vw;
+            height: 0.5vh;
+            margin-left: 99.5vw;
+            margin-top: 99vh;}
+
+            65%{
+                width: 5vw;
+            }
+            
+            74%{width: 2vw;
+            height: 0.5vh;
+            margin-left: 0vw;
+            margin-top: 99vh;}
+            
+            75%{width: 0.5vh;
+            height: 2vw;
+            margin-left: 0vw;
+            margin-top: 99vh;}
+            
+
+            85%{
+                height: 20vh;
+                
+            }
+
+            99%{width: 0.5vh;
+            height: 2vw;
+            margin-left: 0vw;
+            margin-top: 0vh;}
+
+            100%{width: 2vw;
+            height: 0.5vh;
+            margin-left: 0vw;
+            margin-top: 0vh;}
+        }
+        label{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-weight: bolder;
+            color: rgb(223, 231, 255);
+            font-size: 3vw;
+        }
+        label:hover{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-weight: bolder;
+            color: rgb(223, 231, 255);
+            font-size: 3vw;
+        }
+        .cont{
+            vertical-align: middle;
+            align-items: center;
+            align-content: center;
+            text-align: center;
+            line-height: 3vw;
+            width: 20%;
+            height: 90%;
+            margin: 0.75vw;
+            z-index: 2;
+            border-radius: 1vw;
+            animation: appear 1s alternate forwards;
+            margin-top: -50vh;
+            scale: 1;
+            transition: 1s all ease-in-out;
+            cursor: pointer;
+        }
+        .cont:hover{
+            vertical-align: middle;
+            align-items: center;
+            align-content: center;
+            text-align: center;
+            line-height: 3vw;
+            width: 20%;
+            height: 90%;
+            margin: 0.75vw;
+            z-index: 2;
+            border-radius: 1vw;
+            animation: appear 1s alternate forwards;
+            margin-top: -50vh;
+            scale: 1.2;
+        }
+        .cont:nth-child(1){
+            animation-delay: 0.5s;
+        }
+        .cont:nth-child(2){
+            animation-delay: 1s;
+        }
+        .cont:nth-child(3){
+            animation-delay: 1.5s;
+        }
+
+        .cont:nth-child(4){
+            animation-delay: 2s;
+        }
+        @keyframes contcolor {
+            0%{}
+            25%{text-shadow: 0 0 10px purple;}
+            50%{text-shadow: 0 0 10px yellow;}
+            75%{text-shadow: 0 0 10px green;}
+            100%{text-shadow: 0 0 10px red;}
+        }
+        @keyframes appear {
+            0%{opacity: 0.5;
+            }
+            100%{margin-top: 5vh;}
+        }
+        .HBarCont{
+            color: rgb(223, 231, 255);
+            width: 100%;
+            height: 65%;
+            display: flex;
+            z-index: 2;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+          
+        }
+        .HorzBarViz{
+            width: 33%;
+            height: 50%;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-weight: bolder;
+            color: rgb(223, 231, 255);
+            font-size: 1vw;
+            margin-right: 2%;
+            margin-bottom: -200vh;
+            animation: entrydown 2s 1s alternate forwards;
+        }
+        .AreaChart{
+            width: 33%;
+            height: 50%;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-weight: bolder;
+            color: rgb(223, 231, 255);
+            font-size: 1vw;
+            margin-bottom: -200vh;
+            animation: entrydown 2s 1.25s alternate forwards;
+            scale: 1;
+            transition: 2s all ease-in-out;
+
+        }
+        .AreaChart:hover{
+            width: 33%;
+            height: 50%;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-weight: bolder;
+            color: rgb(223, 231, 255);
+            font-size: 1vw;
+            margin-bottom: -200vh;
+            animation: entrydown 2s 1s alternate forwards;
+            scale: 1.2;
+            cursor: grab;
+
+        }
+        .Bar{
+            background: rgb(1, 42, 167);
+            width: calc(100% - 1vw);
+            height: 15%;
+            margin: 0.5vw;
+            line-height: 2.5vw;
+            border-radius: 0.5vw;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-weight: bolder;
+            color: rgb(223, 231, 255);
+            font-size: 1vw;
+            animation: bars 3s alternate forwards;
+            animation-delay: 1s;
+            scale: 1;
+        }
+        .Bar:hover{
+            background: aliceblue;
+            width: calc(100% - 1vw);
+            height: 15%;
+            margin: 0.5vw;
+            line-height: 2.5vw;
+            border-radius: 0.5vw;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-weight: bolder;
+            color: rgb(0, 5, 20);
+            font-size: 1vw;
+            animation: bars 3s alternate forwards;
+            scale: 1.2;
+            cursor: grab;
+        }
+        .Bar:nth-child(2){
+            width: calc(80% - 1vw);
+
+        }
+        .Bar:nth-child(3){
+            width: calc(55% - 1vw);
+
+    }
+    .Bar:nth-child(4){
+        width: calc(40% - 1vw);
+
+    }
+    .Bar:nth-child(5){
+        width: calc(38% - 1vw);
+
+    }
+    .Bar:nth-child(6){
+        width: calc(19% - 1vw);
+
+    }
+        @keyframes bars{
+            0%{width: 0;}
+            100%{}
+        }
+
+        @keyframes area{
+            0%{width: 0;
+            clip-path: polygon(0% 50%,5% 80%,20% 6%, 40% 50% ,90% 45%, 100% 100%, 0% 100%)}
+            100%{}
+        }
+     .Area{
+        width: calc(33vw * 1);
+        height: calc(50vh * 0.7);
+        position: absolute;
+        opacity: 0.5;
+        background: rgb(223, 231, 255);
+        border-top: 0.25vw dashed white;
+        clip-path: polygon(0% 0%,5% 10%,20% 80%, 40% 50% ,90% 0%, 100% 100%, 0% 100%);
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: bolder;
+        color: rgb(223, 231, 255);
+        font-size: 1vw;
+        scale: 1;
+        animation: area 3s alternate forwards;
+        animation-delay: 1s;
+
+     }
+     .Area:nth-child(2){
+        width: calc(33vw * 1);
+        height: calc(50vh * 0.70);
+        opacity: 0.5;
+        position: absolute;
+        background: rgb(69, 113, 245);
+        border-top: 0.25vw dashed white;
+        clip-path: polygon(0% 50%,5% 80%,20% 6%, 40% 50% ,90% 45%, 100% 100%, 0% 100%);
+     }
+    
+
+     @keyframes entrydown {
+        0%{margin-bottom: -200vh;}
+        100%{margin-bottom: 0;}
+     }
+     .Donetscont{
+        width: 25%;
+        height: 50%;
+        scale: 1;
+        transition: 2s all ease-in-out;
+        margin-bottom: -200vh;
+        animation: entrydown 2s 1.5s alternate forwards;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: bolder;
+        color: rgb(223, 231, 255);
+        font-size: 1vw;
+        line-height: 2vw;
+     }
+     .Donetscont:hover{
+        width: 25%;
+        height: 50%;
+        scale: 1.2;
+        transition: 2s all ease-in-out;
+        cursor: grab;
+        z-index: 2;
+        
+     }
+     .Donets{
+        width: 17.5vw;
+        height: 17.5vw;
+        border-radius: 100%;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0) 50%, rgb(1, 42, 167) 50%);
+        clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 70%, 50% 50%);
+        z-index: 1;
+        position: absolute;
+        pointer-events: none;
+        animation: donetsani 3s alternate forwards;
+
+     }
+     .Donetsbg{
+        opacity: 0.60;
+        width: 17.5vw;
+        height: 17.5vw;
+        border-radius: 15vw;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0) 50%, rgb(223, 231, 255) 50%);
+        position: absolute;
+        pointer-events: none;
+     }
+    
+     .info{
+        width: 100%;
+        height: 100%;
+        border-radius: 100%;
+        margin-top: 50%;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: bolder;
+        color: rgb(223, 231, 255);
+        font-size: 1vw;
+        line-height: 2vw;
+        pointer-events: none;
+     }
+     @keyframes donetsani {
+        0%{clip-path: polygon(0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%);}
+        100%{
+        }
+        
+     }
+    </style>
+</head>
+<body>
+    <div class="bgeffects"></div>
+    <div class="movingeffect"></div>
+    <div class="TopBar">
+        <div class="cont">
+            <label>Your Project Title</label>
+        </div>
+        <div class="cont">
+            <label>
+                Rate of Something
+                58%</label>    
+        </div>
+        <div class="cont">
+            <label>Monthly Cost of Something 5772$</label>
+        </div>
+        <div class="cont">
+            <label>Size  of Something 500k</label>
+        </div>
+    </div>
+    <div class="HBarCont">
+        <div class="HorzBarViz">
+          Top Categories
+            <div class="bar">Cat 1    |   789k </div>
+            <div class="bar">Cat 2    |   631k </div>
+            <div class="bar">Cat 3    |   347k </div>
+            <div class="bar">Cat 4    |   139k </div>
+            <div class="bar">Cat 5    |   53k </div>
+            <div class="bar">Cat 6    |   10k </div>
+        </div>
+        <div class="AreaChart">
+            Reality vs Expectaion
+            <div class="Area"></div>
+            <div class="Area"></div>
+            </div>
+
+            <div class="Donetscont">Completion
+            <div class="Donets">
+                   <div class="info">67%</div>
+            </div>
+            <div class="Donetsbg"></div>
+            </div>
+        </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
